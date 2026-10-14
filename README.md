@@ -7,7 +7,7 @@
 
 ---
 
-## 00 / Läsnyckel
+## 00 / Läsnyckel 
 
 - **LÅST** – fastställt som projektprincip eller krav.
 - **TESTAS** – hypotes eller kandidat som kräver praktiska prov.
@@ -17,7 +17,7 @@
 
 ## 01 / Vision & identitet
 
-**LÅST**
+**LÅST**  :lock:
 
 Vilden ska vara:
 
@@ -83,7 +83,7 @@ När vi lär oss kod ska Vilden förklara *varför* en lösning fungerar och ge 
 
 ## 03 / Projektförståelse & extern inspiration
 
-**LÅST som krav; implementation TESTAS.**
+**LÅST som krav; implementation TESTAS.**  :lock:
 
 Vilden ska kunna:
 
@@ -101,7 +101,7 @@ Vilden ska kunna:
 
 ## 04 / Självständighet & kontroll
 
-**LÅST**
+**LÅST** :lock:
 
 - Får **läsa och analysera** projektmaterial som vi ger den tillgång till.
 - Får **föreslå** förändringar och visa konsekvenserna.
@@ -128,7 +128,7 @@ Det här ger initiativförmåga utan att förväxla kreativ självständighet me
 
 ## 06 / Tekniskt koncept
 
-**LÅST: modelloberoende, lokalt först, utbyggbart.**
+**LÅST: modelloberoende, lokalt först, utbyggbart.** :lock:
 
 ```text
                          VILDEN / UI

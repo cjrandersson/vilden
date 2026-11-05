@@ -1,105 +1,105 @@
-VILDEN // PROJEKTKONTEXT & HANDLINGSPLAN
+## VILDEN // PROJEKTKONTEXT & HANDLINGSPLAN
 
-Status: Pausad / Väntar på hårdvaruleverans (2–3 veckor)
+**Status:** Pausad / Väntar på hårdvaruleverans (2–3 veckor)
 
-Skapad: 2026-11-05
+**Skapad:** 2026-11-05
 
-01 / PROJEKTETS VISIONS- OCH KARAKTÄRSKÄRNA
+## 01 / PROJEKTETS VISIONS- OCH KARAKTÄRSKÄRNA
 
-Namn: Vilden (Local Creative Intelligence).
+* **Namn:** Vilden (Local Creative Intelligence).
 
-Syfte: En lokal, självständig kreativ medskapare inom gränslandet mellan design, ljud/musikteknik och creative coding (JS/TS, Node for Max, Web Audio API, p5.js, Three.js).
+* **Syfte:** En lokal, självständig kreativ medskapare inom gränslandet mellan design, ljud/musikteknik och creative coding (JS/TS, Node for Max, Web Audio API, p5.js, Three.js).
 
-Personlighet: Eget omdöme, konstruktivt utmanande (inte en ja-sägare), nyfiken, estetiskt och tekniskt kompromisslös.
+* **Personlighet:** Eget omdöme, konstruktivt utmanande (inte en ja-sägare), nyfiken, estetiskt och tekniskt kompromisslös.
 
-Arbetsprincip: Utforska fritt → granska kritiskt → testa konkret → behåll det som håller.
+* **Arbetsprincip:** Utforska fritt → granska kritiskt → testa konkret → behåll det som håller.
 
-Arkitekturprincip: Helt lokal körning (LM Studio / Ollama API). Vikter, personlighet och projektminne hålls isär. Språkmodellen ligger aldrig i den realtidskritiska ljudloopen utan styr/parameteriserar via JSON.
+* **Arkitekturprincip:** Helt lokal körning (LM Studio / Ollama API). Vikter, personlighet och projektminne hålls isär. Språkmodellen ligger aldrig i den realtidskritiska ljudloopen utan styr/parameteriserar via JSON.
 
-02 / BEKRÄFTAD HÅRDVARA & MILJÖ
+## 02 / BEKRÄFTAD HÅRDVARA & MILJÖ
 
-Huvuddator (Stationär - Hämta inom 2–3 veckor):
+* **Huvuddator (Stationär - Hämta inom 2–3 veckor):**
 
-AMD Ryzen-processor med bra kylning.
+  * AMD Ryzen-processor med bra kylning.
 
-16 GB DDR4 RAM.
+  * 16 GB DDR4 RAM.
 
-Chassi (Antec) med Noctua-kylare & Corsair CX750M (750W) PSU.
+  * Chassi (Antec) med Noctua-kylare & Corsair CX750M (750W) PSU.
 
-Flera SSD-enheter (~400 GB st) + SATA-diskar.
+  * Flera SSD-enheter (\~400 GB st) + SATA-diskar.
 
-Grafikkort setup (Frankenstein Multi-GPU):
+* **Grafikkort setup (Frankenstein Multi-GPU):**
 
-Primärt: ASUS TUF Gaming GeForce RTX 3060 (8 GB VRAM).
+  1. **Primärt:** ASUS TUF Gaming GeForce RTX 3060 (8 GB VRAM).
 
-Sekundärt: NVIDIA GeForce GTX 980 (4 GB VRAM, Blower-fläkt).
+  2. **Sekundärt:** NVIDIA GeForce GTX 980 (4 GB VRAM, Blower-fläkt).
 
-Totalt tillgängligt VRAM: 12 GB uppdelat över 2 kort för LLM-lageravlastning.
+  * *Totalt tillgängligt VRAM:* **12 GB** uppdelat över 2 kort för LLM-lageravlastning.
 
-Övrigt i reserv: ASUS ROG Maximus VII Hero (Z97), Intel i7/i5 (DDR3), GTX 700-kort (ligger på hyllan tills vidare).
+* **Övrigt i reserv:** ASUS ROG Maximus VII Hero (Z97), Intel i7/i5 (DDR3), GTX 700-kort (ligger på hyllan tills vidare).
 
-03 / SAMMANFATTNING AV VÅRA DISKUSSIONER & BESLUT
+## 03 / SAMMANFATTNING AV VÅRA DISKUSSIONER & BESLUT
 
-Multi-GPU Strategi:
+1. **Multi-GPU Strategi:**
 
-Vi utnyttjar båda korten via LM Studio (llama.cpp-lageruppdelning). RTX 3060 tar merparten av lagren, GTX 980 avlastar sista 30% så vi får plats med 9B–12B-modeller i snabbt VRAM.
+   Vi utnyttjar båda korten via LM Studio (`llama.cpp`-lageruppdelning). RTX 3060 tar merparten av lagren, GTX 980 avlastar sista 30% så vi får plats med 9B–12B-modeller i snabbt VRAM.
 
-Arkitektur- & Kodsäkring (Node for Max / Tools):
+2. **Arkitektur- & Kodsäkring (Node for Max / Tools):**
 
-Använd Zod-scheman i JS/TS-bryggan för att validera Vildens JSON-output innan den når Max/MSP.
+   * Använd **Zod-scheman** i JS/TS-bryggan för att validera Vildens JSON-output innan den når Max/MSP.
 
-Bygg en Node.js Mock-miljö för att testa logik offline innan körning i faktiska Max-patchar.
+   * Bygg en **Node.js Mock-miljö** för att testa logik offline innan körning i faktiska Max-patchar.
 
-Sätt upp en lokal MCP-server eller kontextinjektor för att ladda vision.md, principer.md etc. i Vildens systemprompt utan manuell copy-paste.
+   * Sätt upp en lokal **MCP-server eller kontextinjektor** för att ladda `vision.md`, `principer.md` etc. i Vildens systemprompt utan manuell copy-paste.
 
-Inköp & Bevakningsstrategi:
+3. **Inköp & Bevakningsstrategi:**
 
-Vi har upprättat schemalagda sökningar och prompter för att hålla utkik på SweClockers marknad, Tradera och Blocket efter billig begagnad hårdvara (t.ex. Tesla P40, RTX 2080 Ti, X99-plattformar, kraftiga nätaggregat).
+   * Vi har upprättat schemalagda sökningar och prompter för att hålla utkik på SweClockers marknad, Tradera och Blocket efter billig begagnad hårdvara (t.ex. Tesla P40, RTX 2080 Ti, X99-plattformar, kraftiga nätaggregat).
 
-04 / FAS A: NÄSTA STEG NÄR DATORN ÄR PÅ PLATS
+## 04 / FAS A: NÄSTA STEG NÄR DATORN ÄR PÅ PLATS
 
 När datorn är hemma och skruvad drar vi i gång följande sekvens:
 
-[ ] Steg 1: Montering & Hårdvarukontroll
+* \[ \] **Steg 1: Montering & Hårdvarukontroll**
 
-Installera Ryzen-moderkortet i chassit.
+  * Installera Ryzen-moderkortet i chassit.
 
-Montera RTX 3060 (slot 1) och GTX 980 (slot 2).
+  * Montera RTX 3060 (slot 1) och GTX 980 (slot 2).
 
-Verifiera att Corsair CX750M kör separata PCIe 8-pin/6-pin-kablar till varje kort (ingen daisy-chaining på 3060-kortet).
+  * Verifiera att Corsair CX750M kör separata PCIe 8-pin/6-pin-kablar till varje kort (ingen daisy-chaining på 3060-kortet).
 
-Konfigurera SSD-enheter (System-SSD + Dedikerad AI-modell-SSD).
+  * Konfigurera SSD-enheter (System-SSD + Dedikerad AI-modell-SSD).
 
-[ ] Steg 2: Drivrutiner & Mjukvara
+* \[ \] **Steg 2: Drivrutiner & Mjukvara**
 
-Installera Windows/Linux + senaste NVIDIA Unified Drivers.
+  * Installera Windows/Linux + senaste NVIDIA Unified Drivers.
 
-Verifiera båda korten i Enhetshanteraren/NVIDIA Control Panel.
+  * Verifiera båda korten i Enhetshanteraren/NVIDIA Control Panel.
 
-Installera LM Studio.
+  * Installera LM Studio.
 
-[ ] Steg 3: Modell-Audition (T01–T07)
+* \[ \] **Steg 3: Modell-Audition (T01–T07)**
 
-Konfigurera multi-GPU GPU Offload i LM Studio.
+  * Konfigurera multi-GPU GPU Offload i LM Studio.
 
-Ladda ned och kör testerna i specifikationen:
+  * Ladda ned och kör testerna i specifikationen:
 
-Qwen 3.5 4B (Baslinje, extremt snabb)
+    1. *Qwen 3.5 4B* (Baslinje, extremt snabb)
 
-Qwen 3.5 4B Heretic (Jämförelse av vägransbeteende)
+    2. *Qwen 3.5 4B Heretic* (Jämförelse av vägransbeteende)
 
-Qwen 3.5 9B (Huvudkandidat, kräver Multi-GPU för full fart)
+    3. *Qwen 3.5 9B* (Huvudkandidat, kräver Multi-GPU för full fart)
 
-Gemma 3 12B (Om minnet medger)
+    4. *Gemma 3 12B* (Om minnet medger)
 
-[ ] Steg 4: Implementera Vildens Kärna & Systemprompt
+* \[ \] **Steg 4: Implementera Vildens Kärna & Systemprompt**
 
-Skriva Vildens karaktärskontrakt utifrån specen.
+  * Skriva Vildens karaktärskontrakt utifrån specen.
 
-Bygga det lokala Markdown-projektminnet.
+  * Bygga det lokala Markdown-projektminnet.
 
-05 / INSTRUKTION FÖR ÅTERSTART AV SESSION
+## 05 / INSTRUKTION FÖR ÅTERSTART AV SESSION
 
-Klistra in eller referera till denna fil när du återvänder till chatten om 2–3 veckor med meddelandet:
+*Klistra in eller referera till denna fil när du återvänder till chatten om 2–3 veckor med meddelandet:*
 
-"Nu är Ryzen-burken och korten på plats! Läs in vilden_project_context.md och låt oss börja med Steg 1 i Fas A."
+> *"Nu är Ryzen-burken och korten på plats! Läs in `vilden_project_context.md` och låt oss börja med Steg 1 i Fas A."*

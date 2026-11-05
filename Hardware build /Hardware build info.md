@@ -1,3 +1,6 @@
+
+# Frankenstein-rigg för Lokal AI
+
 Att bygga en "Frankenstein-rigg" för lokal AI är en av de roligaste grenarna inom hårdvaruhacking. Eftersom lokala språkmodeller ställer helt andra krav än traditionellt spelande (där man vill ha extrem 3D-fps på ett enda monsterkort) kan man komma undan med ganska vilda kombinationer av äldre och nyare delar.  
 Här är en genomgång av hur andra brukar bygga, de gyllene reglerna, dolda fallgropar och var du hittar bästa nördkunskapen.
 
